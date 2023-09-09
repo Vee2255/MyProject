@@ -1,0 +1,10 @@
+git clone // ไว้clone งานจาก git มาเครื่องตัวเอง
+--
+npm install // ติดตั้งpackageทั่งหมดในfileนี้  ถ้าไม่ติดตั่งจะทำไม่ได้
+npm test // เอาไว้เทสงาน
+--
+git add . // add fileนี้ รอไว้เพื่อcommit (ยังไม่ได้ส่ง)
+git commit -am //-aมันจะaddให้อีกรอบเผื่อลืมadd -m modifine commitทุกfile ที่มีการแก้ไข!!สำคัญ!!
+git push -u origin main // เอาไฟล์เราขึ้นgit hub
+
+ 
