@@ -1,0 +1,164 @@
+JavaScript Array Methods
+1. map()
+Methed นี้จะสร้าง array ขึ้นมาใหม่ โดยในแต่ละ item จะได้จาก ผลลัพธ์จากการ call function ที่เรากําหนด มาลองดูตัวอย่างกันครับ
+
+const arr = [1, 2, 3, 4, 5, 6];
+const mapped = arr.map((element) => element + 30);
+console.log(mapped); // [31, 32, 33, 34, 35, 36]
+2. filter()
+Methed นี้จะสร้าง array ขึ้นมาใหม่ที่ถูก filter แล้ว โดยผลลัพธ์จะขึ้นอยู่กับ Condition ที่เรากำหนดใน function มาดูตัวอย่างจะทําให้เข้าใจมากขึ้นครับ
+
+const arr = [1, 2, 3, 4, 5, 6];
+const filtered = arr.filter((element) => element === 2 || element === 4);
+console.log(filtered); // [2, 4]
+3. sort()
+Methed จะใช้ สําหรับ sort ข้อมูลใน array โดยรูปแบบการ sort จะขึ้นอยู่กับ condition ใน function ที่เรากําหนด ดูตามตัวอย่างเพื่อให้เข้าใจมากยิ่งขึ้น
+
+const arr = [1, 2, 3, 4, 5, 6];
+const alphabet = ['f', 'a', 'c', 'v', 'z'];
+
+const descend = arr.sort((a, b) => (a > b ? -1 : 1));
+console.log(descend); // [6, 5, 4, 3, 2, 1]
+
+const ascend = arr.sort((a, b) => (a > b ? 1 : -1));
+console.log(ascend); // ["a", "c", "f", "v", "z"]
+4. forEach()
+Methed จะช่วยในการ Loop ใน Array ตามตัวอย่างนี้ครับ
+
+const arr = [1, 2, 3];
+arr.forEach((element) => {
+  console.log(element);
+});
+// 1
+// 2
+// 3
+5. concat()
+Methed จะช่วยในการนํา Array สองชุดมาต่อกัน ลองดูตามตัวอย่างครับ
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+console.log(arr1.concat(arr2)); // [1, 2, 3, 4, 5, 6]
+console.log(arr1); // [1, 2, 3]
+console.log(arr2); // [4, 5, 6]
+6. every()
+Methed จะช่วยให้เราสามารถ Check ทุกๆ Item ใน array โดยเราจะเป็นคนกําหนด Condition โดยถ้าผลออกมาเป็น true ทุก Item จะทําให้ every() return true แต่ถ้ามี Item อันใดอันหนึ่งเป็น false แล้ว every() จะ return false
+
+const arr = [1, 2, 3, 5, 7];
+
+const greaterFive = arr.every(num => num > 5);
+console.log(greaterFive); // false
+
+const lessNine = arr.every(num => num <> 9);
+console.log(lessNine); // true
+7. some()
+Methed จะช่วยให้เราสามารถ Check ทุกๆ Item ใน array โดยเราจะเป็นคนกําหนด Condition โดยถ้า Item อันใดอันหนึ่งผลออกมาเป็น true จะทําให้ผลลัพธ์เป็น true ทันที แต่กรณีที่ผลเป็น false ทุก Item ผลลัพธ์จะออกมาเป็น false
+
+const arr = [1, 2, 3, 5, 7];
+
+const someItemGreaterFive = arr.some((num) => num > 5);
+console.log(greaterFive); // true
+
+const lessNum = arr.some((num) => num <= 0);
+console.log(lessNum); // false
+8. includes()
+Methed สําหรับ Check ว่าใน Array มี Item นี้อยู่หรือป่าว โดยจะ return ออกมาเป็น boolean มาดูัวอย่างกันครับ
+
+const arr = [1, 2, 3, 5, 7];
+
+console.log(arr.includes(2)); // true
+console.log(arr.includes(9)); // false
+9. join()
+Methed สําหรับรวม Array ให้เป็น string โดยสามารถกําหนด separator ในการรวมได้ ตามตัวอย่าง code ด้านล่าง
+
+const arr = ['a', 'b', 'c'];
+
+console.log(arr.join(',')); // a,b,c
+10. reduce()
+เราสามารถใช้ Methed ในการรวมข้อมูลใน array ได้ครับ หรือนําไปใช้ในแบบอื่นๆได้ ลองดูตามตัวอย่างนี้ครับ
+
+const arr = [1, 2, 3, 4];
+
+const reduced = arr.reduce((total, current) => total + current);
+
+console.log(reduced); // 10
+11. find()
+Methed นี้จะใช้สําหรับหาข้อมูลใน Array โดยจะ return item แรกที่เจอครับ ตามตัวอย่างนี้
+
+const arr = [1, 2, 3, 4, 7, 9, 10];
+
+const found = arr.find((it) => it > 5);
+
+console.log(found); // 7
+12. findIndex()
+Methed นี้จะใช้สําหรับหาข้อมูลใน Array โดยจะ return เป็น index ของ item แรกที่เจอครับ ตามตัวอย่างนี้
+
+const arr = ['Apple', 'Mandeep', 'John'];
+
+const foundIndex = arr.findIndex((it) => it === 'Mandeep');
+
+console.log(foundIndex); // 1
+13. indexOf()
+Methed นี้จะใช้สําหรับหาข้อมูลใน Array โดยจะ return เป็น index ของ item แรกที่เจอครับ ซึ่งเราจะระบุเป็นข้อมูลที่จะค้นหาไปเลย และกรณีที่ไม่เจอข้อมูลจะ return -1 ตามตัวอย่างนี้
+
+const arr = ['Apple', 'Mandeep', 'John'];
+
+const foundIndex = arr.indexOf('Mandeep');
+
+console.log(foundIndex); // 1
+14. fill()
+Methed นี้จะช่วยให้เราสามารถใส่ข้อมูลเข้าไปทุกช่องของ Array
+
+const arr = new Array(3);
+
+console.log(arr); // [empty, empty, empty]
+console.log(arr.fill(20)); // [20, 20, 20]
+console.log(arr); // [20, 20, 20]
+15. slice()
+Methed นี้จะช่วยให้เราสามารถหยิบเอาข้อมูลบางส่วนใน Array ออกมา
+
+const arr = ['a', 'b', 'c', 'd', 'e'];
+
+const sliced1 = arr.slice(2, 4);
+const sliced2 = arr.slice(2);
+const sliced3 = arr.slice(-1);
+
+console.log(arr); // ["a", "b", "c", "d", "e"]
+console.log(sliced1); // ["c", "d"]
+console.log(sliced2); // ["a", "b"]
+console.log(sliced3); // ["e"]
+16. reverse()
+Methed นี้จะช่วยให้เราสามารถ Reverse ข้อมูลใน Array ได้ง่ายๆ
+
+const arr = [1, 2, 3];
+
+arr.reverse();
+
+console.log(arr); // [3, 2, 1]
+17. push()
+Methed นี้จะใช้ในการเพิ่มข้อมูลเข้าไปใน Array โดยจะเพิ่มเข้าไปในท้ายสุด Array
+
+const arr = ['Apple', 'Peach'];
+
+console.log(arr.push('Banana')); // 3
+console.log(arr); // ["Apple", "Peach", "Banana"]
+18. pop()
+Methed นี้จะใช้ในการดึงข้อมูลท้ายสุดของ Array ออกมา 1 Item
+
+const arr = ['Apple', 'Peach'];
+
+console.log(arr.pop()); // Peach
+console.log(arr); // ["Apple"]
+19. shift()
+Methed นี้จะใช้ในการดึงข้อมูลแรกสุดของ Array ออกมา 1 Item
+
+const arr = ['Apple', 'Peach'];
+
+console.log(arr.shift()); // Apple
+console.log(arr); // ["Peach"]
+20. unshift()
+Methed นี้จะใช้ในการเพิ่มข้อมูลเข้าไปในส่วนแรกของ Array
+
+const arr = ['Apple', 'Peach'];
+
+console.log(arr.unshift('Banana')); // 3
+console.log(arr); // ["Banana", "Apple", "Peach"]
