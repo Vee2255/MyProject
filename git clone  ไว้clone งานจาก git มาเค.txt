@@ -4,7 +4,7 @@ npm install // ติดตั้งpackageทั่งหมดในfileนี
 npm test // เอาไว้เทสงาน
 --
 git add . // add fileนี้ รอไว้เพื่อcommit (ยังไม่ได้ส่ง)
-git commit -am //-aมันจะaddให้อีกรอบเผื่อลืมadd -m modifine commitทุกfile ที่มีการแก้ไข!!สำคัญ!!
+git commit -am  (ตั่งชื่อ)//-aมันจะaddให้อีกรอบเผื่อลืมadd -m modifine commitทุกfile ที่มีการแก้ไข!!สำคัญ!!
 git push -u origin main // เอาไฟล์เราขึ้นgit hub
 
  
