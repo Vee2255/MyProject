@@ -1,0 +1,158 @@
+ฟังก์ชันที่มีตั้งแต่ใน ES3
+
+Math.sin (x)	sine
+Math.cos (x)	cosine
+Math.tan (x)	tangent
+Math.asin (x)	arcsine
+Math.acos (x)	arccos
+Math.atan (x)	arctan
+Math.atan2 (y, x)	arctan2
+Math.abs (x)	หาค่าสัมบูรณ์
+Math.round (x)	ปัดเศษ .5 ขึ้นไปขึ้น ต่ำกว่า .5 ลง
+Math.ceil (x)	ปัดเป็นจำนวนเต็มโดยปัดขึ้น
+Math.floor (x)	ปัดเป็นจำนวนเต็มโดยปัดลง
+Math.exp (x)	เอ็กซ์โพเน็นเชียล (ex)
+Math.log (x)	ลอการิธึม logex
+Math.sqrt (x)	รากที่สอง
+Math.pow (x, y)	x ยกกำลัง y (xy)
+Math.max (x1, x2, ...)	หาค่าสูงสุด
+Math.min (x1, x2, ...)	หาค่าต่ำสุด
+Math.random ()	สร้างค่าสุ่มตั้งแต่ 0 ถึง 1
+
+ฟังก์ชันที่เพิ่มเข้ามาใน ES6
+
+Math.sinh (x)	hyperbolic sine
+Math.cosh (x)	hyperbolic cosine
+Math.tanh (x)	hyperbolic tangent
+Math.asinh (x)	inverse hyperbolic sine
+Math.acosh (x)	inverse hyperbolic cosine
+Math.atanh (x)	inverse hyperbolic tangent
+Math.log10 (x)	log10(x)
+Math.log2 (x)	log2(x)
+Math.log1p (x)	loge(1+x)
+Math.expm1 (x)	ex-1
+Math.cbrt (x)	รากที่สาม
+Math.hypot (x1, x2, ...)	รากที่สองของผลบวกกำลังสอง
+Math.trunc (x)	ปัดเป็นจำนวนตรงโดยปัดเศษทิ้ง
+Math.sign (x)	หาว่าเป็นบวกหรือลบ ถ้าเป็นบวกได้ 1 ถ้าเป็นลบได้ -1
+
+
+ปัดเศษ介슈
+
+เมื่อมีจำนวนทศนิยมแล้วต้องการปัดให้เป็นจำนวนเต็ม อาจใช้
+- Math.ceil เมื่อต้องการปัดขึ้นเสมอ
+- Math.floor เมื่อต้องการปัดลงเสมอ
+- Math.round เมื่อต้องการให้ปัดขึ้นเมื่อเป็น 0.5 ขึ้นไป และปัดลงเมื่อไม่ถึง 0.5
+alert(Math.ceil(11.2)); // ได้ 12
+alert(Math.floor(11.51)); // ได้ 11
+alert(Math.round(11.8)); // ได้ 12
+alert(Math.round(11.4)); // ได้ 11
+alert(Math.ceil(-11.2)); // ได้ -11
+alert(Math.floor(-11.51)); // ได้ -12
+alert(Math.round(-11.8)); // ได้ -12
+alert(Math.round(-11.4)); // ได้ -11
+
+ส่วน Math.trunc ที่เพิ่มมาใน ES6 นั้นจะเหมือน floor ในกรณีที่เป็นเลขบวก และเหมือน ceil เมื่อเป็นเลขลบ
+
+
+
+ค่าสัมบูรณ์介슈
+
+Math.abs ใช้หาค่าสัมบูรณ์ของตัวเลข
+alert(Math.abs(-15)); // ได้ 15
+alert(Math.abs("20")); // ได้ 20
+
+
+
+เลขยกกำลัง介슈
+
+ฟังก์ชันที่เกี่ยวข้องกับเลขยกกำลังได้แก่
+- Math.exp ใช้คำนวณเอ็กซ์โพเนนเชียล
+- Math.log ใช้คำนวณลอการิธึมฐานธรรมชาติ
+- Math.sqrt ใช้คำนวณค่ารากที่สอง
+- Math.pow ใช้คำนวณเลขยกกำลัง
+alert(Math.exp(10)); // ได้ 22026.465794806718
+alert(Math.log(10)); // ได้ 2.302585092994046
+alert(Math.sqrt(100)); // ได้ 10
+alert(Math.pow(10, 2)); // ได้ 100
+
+ใน ES2016 ขึ้นไปสามารถใช้ x**y แทน Math.pow(x,y) ได้
+alert(10**2); // ได้ 100
+
+
+ตรีโกณมิติ介슈
+
+ฟังก์ชันตรีโกณมิติพื้นฐานประกอบไปด้วย
+- Math.sin
+- Math.cos
+- Math.tan
+alert(Math.sin(Math.PI)); // ได้ 1.2246467991473532e-16
+alert(Math.cos(3)); // ได้ -0.9899924966004454
+alert(Math.tan(Math.PI / 4)); // ได้ 0.9999999999999999
+
+และฟังก์ชันส่วนกลับ ประกอบไปด้วย
+- Math.asin
+- Math.acos
+- Math.atan
+- Math.atan2
+alert((Math.asin(1) / Math.PI) * 180); // ได้ 90
+alert((Math.acos(1) / Math.PI) * 180); // ได้ 0
+alert((Math.atan(1) / Math.PI) * 180); // ได้ 45
+alert((Math.atan2(0.5, 0.5) / Math.PI) * 180); // ได้ 45
+alert((Math.atan2(0.5, -0.5) / Math.PI) * 180); // ได้ 135
+alert((Math.atan2(-0.5, -0.5) / Math.PI) * 180); // ได้ -135
+alert((Math.atan2(-0.5, 0.5) / Math.PI) * 180); // ได้ -45
+
+
+และใน ES6 ยังมีพวกไฮเพอร์โบลิกเพิ่มเข้ามาอีกด้วย
+
+
+
+ค่าสูงสุดต่ำสุด介슈
+
+Math.min เป็นฟังก์ชันที่ใช้หาค่าต่ำสุดในบรรดาข้อมูลทั้งหมดที่ใส่เข้าไปเป็นอาร์กิวเมนต์ ส่วนฟังก์ชันที่ใช้หาค่าสูงสุดคือ Math.max
+alert(Math.max(1,Math.PI,5)); // ได้ 5
+alert(Math.min(2,3,5)); // ได้ 2
+
+หากข้อมูลที่ใส่เข้าไปมีที่ไม่ใช่ตัวเลขก็จะถูกแปลงเป็นตัวเลขโดยอัตโนมัติก่อนเทียบ แต่ถ้าตัวใดตัวหนึ่งแปลงไม่ได้จะได้ NaN
+alert(Math.max("a", 1, 2)); // ได้ NaN
+alert(Math.min("2", 1.5, 4)); // ได้ 1.5
+
+
+การสร้างค่าสุ่ม介슈
+
+หากต้องการค่าสุ่มตั้งแต่ 0 ถึง 1 สามารถใช้ Math.random
+var ar = [];
+var i = 1;
+while (i < 9) {
+  ar.push("ครั้งที่ " + i + ": " + Math.random());
+  i++;
+}
+alert(ar.join("\n"));
+ได้
+ครั้งที่ 1: 0.6290472603371913
+ครั้งที่ 2: 0.9779730139377725
+ครั้งที่ 3: 0.41997857970286534
+ครั้งที่ 4: 0.1898982006892228
+ครั้งที่ 5: 0.5984295533679661
+ครั้งที่ 6: 0.8441898470520106
+ครั้งที่ 7: 0.054433221098181606
+ครั้งที่ 8: 0.881529245966359
+
+จะได้ค่าสุ่มที่ไม่ซ้ำกันในแต่ละครั้ง
+
+หากต้องการเลขสุ่มเป็นจำนวนเต็มในช่วงที่กำหนด อาจใช้ร่วมกับ Math.floor เช่น
+var f = function(a, b) {
+  return Math.floor(a + Math.random() * (b - a));
+};
+
+var ar1 = [];
+var ar2 = [];
+var i = 0;
+while (i < 20) {
+  ar1.push(f(5, 10)); // สุ่มเลขตั้งแต่ 5 ถึง 9
+  ar2.push(f(10, 15)); // สุ่มเลขตั้งแต่ 10 ถึง 14
+  i++;
+}
+alert(ar1); // ได้ 9,9,9,7,9,7,9,5,8,8,9,7,5,7,9,9,5,8,6,7
+alert(ar2); // ได้ 10,13,14,14,11,10,14,10,13,10,14,12,13,14,14,12,13,12,13,10
