@@ -1,0 +1,112 @@
+push(): เพิ่มค่าใหม่ลงใน Array
+JavaScript
+const numbers = [1, 2, 3];
+
+numbers.push(4);
+
+console.log(numbers); // [1, 2, 3, 4]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+pop(): ลบค่าสุดท้ายออกจาก Array
+JavaScript
+const numbers = [1, 2, 3, 4];
+
+numbers.pop();
+
+console.log(numbers); // [1, 2, 3]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+unshift(): เพิ่มค่าใหม่ไว้หน้า Array
+JavaScript
+const numbers = [1, 2, 3];
+
+numbers.unshift(0);
+
+console.log(numbers); // [0, 1, 2, 3]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+shift(): ลบค่าแรกออกจาก Array
+JavaScript
+const numbers = [0, 1, 2, 3];
+
+numbers.shift();
+
+console.log(numbers); // [1, 2, 3]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+slice(): ตัดเอาสมาชิกบางส่วนของอาเรย์ออก
+JavaScript
+const numbers = [1, 2, 3, 4, 5];
+
+const slicedNumbers = numbers.slice(2);
+
+console.log(slicedNumbers); // [3, 4, 5]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+concat(): รวมสองอาเรย์เข้าด้วยกัน
+JavaScript
+const numbers1 = [1, 2, 3];
+const numbers2 = [4, 5, 6];
+
+const concatenatedNumbers = numbers1.concat(numbers2);
+
+console.log(concatenatedNumbers); // [1, 2, 3, 4, 5, 6]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+filter(): กรองค่าของอาเรย์ตามเงื่อนไขที่กำหนด
+JavaScript
+const numbers = [1, 2, 3, 4, 5];
+
+const evenNumbers = numbers.filter((number) => number % 2 === 0);
+
+console.log(evenNumbers); // [2, 4]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+map(): แปลงค่าของอาเรย์เป็นค่าใหม่ตามฟังก์ชันที่กำหนด
+JavaScript
+const numbers = [1, 2, 3, 4, 5];
+
+const doubledNumbers = numbers.map((number) => number * 2);
+
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+reduce(): รวมค่าของอาเรย์เป็นค่าเดียวตามฟังก์ชันที่กำหนด
+JavaScript
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((a, b) => a + b);
+
+console.log(sum); // 15
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+String Methods
+
+toUpperCase(): แปลงตัวอักษรทั้งหมดให้เป็นอักษรตัวใหญ่
+JavaScript
+const str = "Hello, world!";
+
+console.log(str.toUpperCase()); // HELLO, WORLD!
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+toLowerCase(): แปลงตัวอักษรทั้งหมดให้เป็นอักษรตัวเล็ก
+JavaScript
+const str = "Hello, world!";
+
+console.log(str.toLowerCase()); // hello, world!
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+trim(): ลบช่องว่างหน้าและหลังของสตริงออก
+JavaScript
+const str = "  Hello, world!  ";
+
+console.log(str.trim()); // Hello, world!
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+replace(): แทนที่สตริงบางส่วนด้วยสตริงใหม่
+JavaScript
+const str = "Hello, world!";
+
+console.log(str.replace("Hello", "Goodbye")); // Goodbye, world!
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+split(): แบ่งสตริงออกเป็นสตริงย่อยตามเงื่อนไขที่กำหนด
+JavaScript
+const str = "Hello, world!";
+
+const splitStr = str.split(",");
+
+console.log(splitStr); // ["Hello", "world!"]
+โปรดใช้โค้ดด้วยความระมัดระวัง ดูข้อมูลเพิ่มเติม
+charAt(): ดึงตัวอักษรตัวที่ระบุออกจากสตริง
+JavaScript
+const str = "Hello, world!";
+
+console.log(str.charAt(0)); // H
