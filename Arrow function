@@ -1,0 +1,17 @@
+// ฟังก์ชันแบบปกติ
+function double(numbers) {
+  const doubledNumbers = [];
+  for (let i = 0; i < numbers.length; i++) {
+    doubledNumbers.push(numbers[i] * 2);
+  }
+
+  return doubledNumbers;
+}
+
+// Arrow function
+const double = (numbers) => numbers.map((number) => number * 2);
+
+// การใช้งาน
+const numbers = [1, 2, 3, 4, 5];
+
+console.log(double(numbers)); // [2, 4, 6, 8, 10]
