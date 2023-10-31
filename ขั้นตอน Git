@@ -1,4 +1,5 @@
-git clone // ไว้clone งานจาก git มาเครื่องตัวเอง
+copy link จาก Github ของอาจารย์
+git clone // ไว้clone งานจาก git มาเครื่องตัวเอง (git clone .....)
 --
 npm install // ติดตั้งpackageทั่งหมดในfileนี้  ถ้าไม่ติดตั่งจะทำไม่ได้
 npm test // เอาไว้เทสงาน
