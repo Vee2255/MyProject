@@ -1,0 +1,38 @@
+class Movies {
+
+  constructor(){
+    this.movies = []
+  }
+  getAllMovies(){
+    return this.movies
+  }
+  addMovie(title, director, year, genre){
+    if (!title || !director || !year || !genre){
+      return undefined
+    }
+    if (this.movies.findIndex((m) => {
+      return m.title.toLowerCase() === title.toLowerCase() && m.director.toLowerCase() === director.toLowerCase()
+    }) > -1) return undefined
+
+    const newMovie = {title, director, year, genre}
+    this.movies.push(newMovie)
+    return newMovie
+  }
+  updateMovie(title, updatedDetails){
+    const foundedMovie = this.movies.find((m) => m.title.toLowerCase() === title.toLowerCase())
+    if (foundedMovie === undefined) return undefined
+
+    for (const detail in updatedDetails) {
+      foundedMovie[detail] = updatedDetails[detail]
+    }return foundedMovie
+  }
+  deleteMovieByTitle(title){
+    const deleteIndex = this.movies.findIndex((m) => m.title.toLowerCase() === title.toLowerCase())
+    if (deleteIndex === -1) return
+
+    this.movies.splice(deleteIndex, 1)
+  }                                             
+  
+  
+}
+const sum = '1,2,3'
