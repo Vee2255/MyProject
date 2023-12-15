@@ -1,0 +1,85 @@
+const createGuestList = require('./data/guestdata.js')
+
+const guestList = createGuestList()
+function guestForm() {
+  //provide initial guests data list created from GuestManagement class
+  let guests = guestList
+
+  // 1. register event for searching and adding
+  function registerEventHandling() {
+    const searchInput = document.getElementById('search-input')
+    const addGuestBtn = document.getElementById('add-guest-btn')
+    
+    searchInput.addEventListener('keyup', searchGuest)
+    addGuestBtn.addEventListener('click', addGuest)
+  }
+
+  // 2. Function to display one guest in the display area
+  function displayGuest(guestItem) {
+    const { firstname, lastname } = guestItem
+
+    const displayArea = document.getElementById('display-area')
+    const guestCard = document.createElement('div')
+    const fullNameSpan = document.createElement('span')
+    const removeIconSpan = document.createElement('span')
+
+    fullNameSpan.textContent = `${firstname} ${lastname}`
+
+    removeIconSpan.setAttribute('class', 'remove-icon')
+    removeIconSpan.setAttribute('id', `${firstname}-${lastname}`)
+    removeIconSpan.style.cursor = 'pointer'
+    removeIconSpan.style.color = 'red'
+    removeIconSpan.textContent = '[X]'
+    removeIconSpan.addEventListener('click', removeGuest)
+
+    guestCard.appendChild(fullNameSpan)
+    guestCard.appendChild(removeIconSpan)
+
+    displayArea.appendChild(guestCard)
+  }
+
+  // 3. Function to display all existing guests in the display area
+  function displayGuests(guestResult) {
+    const displayArea = document.getElementById('display-area')
+    displayArea.innerHTML = ''
+
+    guestResult.forEach((guest) => { displayGuest(guest) })
+  }
+
+  // 4. Function to search and display matching guests
+  function searchGuest(event) {
+    const searchResults = guests.searchGuests(event.target.value)
+
+    displayGuests(searchResults)
+  }
+
+  // 5. Function to add a new guest
+  function addGuest() {
+    const firstnameInput = document.getElementById('firstname-input')
+    const lastnameInput = document.getElementById('lastname-input')
+    
+    const newGuestLists = guests.addNewGuest(firstnameInput.value, lastnameInput.value)
+    firstnameInput.value = ''
+    lastnameInput.value = ''
+
+    displayGuest(newGuestLists[newGuestLists.length - 1])
+  }
+
+  // 6. Function to remove a guest
+  function removeGuest(event) {
+    const [firstname, lastname] = event.target.id.split('-')
+    const deleteGuest = { firstname, lastname } 
+    guests.removeGuest(deleteGuest)
+
+    event.target.parentElement.remove()
+  }
+
+  return {
+    registerEventHandling,
+    displayGuests,
+    searchGuest,
+    addGuest,
+    removeGuest
+  }
+}
+module.exports = guestForm
