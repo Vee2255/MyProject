@@ -33,6 +33,6 @@ class Movies {
     this.movies.splice(deleteIndex, 1)
   }                                             
   
-  
+
 }
 const sum = '1,2,3'
