@@ -1,0 +1,66 @@
+รับองค์ประกอบ ById:
+
+ดึงข้อมูลองค์ประกอบตาม ID เฉพาะของมัน
+var element = document.getElementById('myId');
+getElementsByClassName:
+
+ส่งกลับคอลเลกชันขององค์ประกอบที่มีชื่อคลาสที่ระบุ
+var elements = document.getElementsByClassName('myClass');
+getElementsByTagName:
+
+ส่งกลับองค์ประกอบที่มีชื่อแท็กที่ระบุ
+var elements = document.getElementsByTagName('div');
+ตัวเลือกแบบสอบถาม:
+
+ส่งกลับองค์ประกอบแรกที่ตรงกับตัวเลือก CSS
+var element = document.querySelector('#myId .myClass');
+แบบสอบถามตัวเลือกทั้งหมด:
+
+ส่งคืนองค์ประกอบทั้งหมดที่ตรงกับตัวเลือก CSS
+var elements = document.querySelectorAll('.myClass');
+สร้างองค์ประกอบ:
+
+สร้างองค์ประกอบ HTML ใหม่
+var newElement = document.createElement('div');
+ผนวกเด็ก:
+
+ผนวกโหนดเป็นลูกสุดท้ายของโหนดหลัก
+parentElement.appendChild(newElement);
+ลบเด็ก:
+
+เอาโหนดลูกออกจาก DOM
+parentElement.removeChild(childElement);
+โหนดหลัก:
+
+ส่งกลับโหนดหลักของโหนดที่ระบุ
+var parent = element.parentNode;
+พี่น้องคนต่อไปและพี่น้องคนก่อนหน้า:
+
+กลับโหนดพี่น้องถัดไปหรือก่อนหน้า
+var nextElement = element.nextSibling;
+var prevElement = element.previousSibling;
+รายการคลาส:
+
+จัดให้มีวิธีการในการจัดการชั้นเรียน
+element.classList.add('newClass');
+element.classList.remove('oldClass');
+getAttribute และ setAttribute:
+
+รับหรือตั้งค่าของแอตทริบิวต์
+var value = element.getAttribute('data-id');
+element.setAttribute('data-id', 'new-value');
+innerHTML และเนื้อหาข้อความ:
+
+รับหรือตั้งค่าเนื้อหา HTML หรือเนื้อหาข้อความ
+var content = element.innerHTML;
+element.innerHTML = '<p>New content</p>';
+addEventListener:
+
+แนบตัวจัดการเหตุการณ์กับองค์ประกอบ
+element.addEventListener('click', function() {
+    // do something on click
+});
+การจัดการสไตล์:
+
+จัดการรูปแบบอินไลน์ขององค์ประกอบโดยตรง
+element.style.color = 'red';
